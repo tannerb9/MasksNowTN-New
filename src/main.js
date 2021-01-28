@@ -1,15 +1,14 @@
 import Vue from "vue";
-import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
-import VueRouter from "vue-router";
-import router from "/router/index.js";
-
-Vue.use(VueRouter);
+import App from "./App";
+import router from "./router/index.js";
 
 Vue.config.productionTip = false;
 
 new Vue({
   vuetify,
-  render: (h) => h(App),
-  router: router,
+  router,
+  render: function(createElement) {
+    return createElement(App);
+  },
 }).$mount("#app");
