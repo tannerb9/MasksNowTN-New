@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <v-app-bar app> </v-app-bar>
+    <v-app-bar app>
+      <v-toolbar-title>Masks Now TN</v-toolbar-title>
+    </v-app-bar>
 
     <v-main>
       <router-view></router-view>
@@ -13,6 +15,8 @@ export default {
   name: "App",
 };
 </script>
+
+import Nav from "@/components/Nav";
 
 <style>
 #app {
