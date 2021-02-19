@@ -9,7 +9,7 @@
         >
         <v-card-actions>
           <v-btn outlined rounded text>
-            Button
+            Sign Up
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -25,7 +25,7 @@
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text>
-            Button
+            Donate Funds
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -39,7 +39,7 @@
         >
         <v-card-actions>
           <v-btn outlined rounded text>
-            Button
+            Donate Materials
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -52,8 +52,8 @@
           your state’s chapter.</v-card-text
         >
         <v-card-actions>
-          <v-btn outlined rounded text>
-            Button
+          <v-btn outlined rounded text v-on:click="goToNationalSite">
+            National
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -64,5 +64,10 @@
 <script>
 export default {
   name: "Help",
+  methods: {
+    goToNationalSite: function() {
+      window.open("https://masksnow.org/volunteer/", "_blank");
+    },
+  },
 };
 </script>
