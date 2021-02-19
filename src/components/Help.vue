@@ -8,7 +8,7 @@
           making kits</v-card-text
         >
         <v-card-actions>
-          <v-btn outlined rounded text>
+          <v-btn outlined rounded text v-on:click="goToSignUpPage">
             Sign Up
           </v-btn>
         </v-card-actions>
@@ -24,7 +24,7 @@
           masks and kits to those who need them!
         </v-card-text>
         <v-card-actions>
-          <v-btn outlined rounded text>
+          <v-btn outlined rounded text v-on:click="goToGoFundMePage">
             Donate Funds
           </v-btn>
         </v-card-actions>
@@ -69,7 +69,16 @@ export default {
   name: "Help",
   methods: {
     goToNationalSite: function() {
+      window.open("https://masksnow.org", "_blank");
+    },
+    goToSignUpPage: function() {
       window.open("https://masksnow.org/volunteer/", "_blank");
+    },
+    goToGoFundMePage: function() {
+      window.open(
+        "https://charity.gofundme.com/o/en/campaign/masksnow-tennessee",
+        "_blank"
+      );
     },
   },
 };
