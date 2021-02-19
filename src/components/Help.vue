@@ -39,7 +39,10 @@
         >
         <v-card-actions>
           <v-btn outlined rounded text>
-            Donate Materials
+            <a
+              href="mailto:distribution.make@gmail.com?subject=New Material Donation"
+              >Donate Materials</a
+            >
           </v-btn>
         </v-card-actions>
       </v-card>
