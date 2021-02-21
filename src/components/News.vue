@@ -4,11 +4,33 @@
       <v-sheet :color="colors[i]" height="100%" tile>
         <v-row class="fill-height" align="center" justify="center">
           <div class="display-3">{{ newsPieces[i].title }}</div>
-          <v-img v-if="newsPieces[i].image" :src="newsPieces[i].image">
+          <v-img
+            v-if="newsPieces[i].image"
+            :src="newsPieces[i].image"
+            max-width="600"
+          >
           </v-img>
           <div class="display-3" v-if="newsPieces[i].textBody">
             {{ newsPieces[i].textBody }}
           </div>
+          <v-dialog v-model="dialog">
+            <template
+              v-slot:activator="{ on, attrs }"
+              v-if="newsPieces[i].action"
+            >
+              <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                Learn More
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title class="headline">
+                {{ newsPieces[i].title }}
+              </v-card-title>
+              <v-card-text>{{
+                newsPieces[i].modalTextBody
+              }}</v-card-text>
+            </v-card>
+          </v-dialog>
         </v-row>
       </v-sheet>
     </v-carousel-item>
@@ -26,6 +48,8 @@ export default {
           image: require("@/img/BenBeard.png"),
           textBody: null,
           action: function() {},
+          modalTextBody:
+            "It's always wonderful when donors can involve the community and spread the word about masks. Ben Beard organized a neighborhood fundraiser that purchased 10,000 disposable masks and 100 sewn masks (pictured above). The disposable masks went to Vanderbilt University Medical Center, fulfilling their entire request, and the sewn masks were distributed to organizations from Memphis to Chattanooga. Three cheers for Ben and his neighbors! ",
         },
         {
           title: "Chef's Market Donation",
