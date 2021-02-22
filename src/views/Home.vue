@@ -3,7 +3,6 @@
     <Info></Info>
     <News></News>
     <Help></Help>
-    <Contact></Contact>
   </v-container>
 </template>
 
