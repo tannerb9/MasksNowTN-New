@@ -1,0 +1,13 @@
+{
+    "airtableConfig": {
+        "apiKey": "",
+        "tableIds": {
+            "tnVolunteerTracking": "",
+            "volunteers": "",
+            "contentCalendar": "",
+            "distributionTracking": "",
+            "requestsForHelp": "",
+            "metrics": ""
+        }
+    }
+}
