@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-app-bar dense color="#153570" >
+        <v-app-bar app dense color="#153570" >
             <template v-slot:extension>
                 <v-tabs>
                     <v-tab><a href="https://masksnow.org/">National Website</a></v-tab>
@@ -18,12 +18,11 @@
 export default {
   name: "Nav",
 };
+
 </script>
 
 <style>
-.v-app-bar {
-    width: 100%;
-}
+
 .v-tabs {
     display: flex;
     justify-content: space-evenly;
@@ -54,10 +53,5 @@ export default {
 .v-app-bar a:hover {
     transform: scale(1.07);
 }
-/* .airtable-embed {
-    width:"100%";
-    height:"533"; 
-    background: transparent; 
-    border: 1px solid #ccc;
-} */
+
 </style>
