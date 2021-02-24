@@ -23,7 +23,7 @@
             v-on:click="clickHandler(icon)"
           >
             <v-icon size="24px">
-              {{ icon.title }}
+              {{ icon }}
             </v-icon>
           </v-btn>
         </v-card-title>
