@@ -1,10 +1,12 @@
 <template>
   <v-footer padless>
     <v-card class="flex" flat tile>
-      <v-card-text class="py-0 black--text text-center">
-        <strong>Masks Now TN</strong>
+      <v-card-text
+        class="pt-1 pb-0 text-h6 black white--text text-center"
+      >
+        Masks Now TN
       </v-card-text>
-      <v-card-title>
+      <v-card-text class="d-flex py-0 justify-center black">
         <v-btn
           v-for="icon in icons"
           :key="icon"
@@ -17,7 +19,7 @@
             {{ icon }}
           </v-icon>
         </v-btn>
-      </v-card-title>
+      </v-card-text>
     </v-card>
   </v-footer>
 </template>
