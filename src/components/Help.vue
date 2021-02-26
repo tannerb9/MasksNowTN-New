@@ -135,11 +135,12 @@ export default {
           },
         },
         {
-          title: "",
-          textBody: "",
+          title: "Donate Materials",
+          textBody:
+            "All donations stay in TN and are used to make masks for Tennessean's who need them!",
           modal: {
-            clickToOpenText: "",
-            modalHeadline: "",
+            clickToOpenText: "Click here to see materials needed",
+            modalHeadline: "MATERIALS NEEDED",
             modalBody: [
               "50% or higher cotton fabric (for the actual mask)",
               "Thin elastic (¼-¾” ideally) to hold the mask onto the head",
@@ -152,16 +153,26 @@ export default {
               "Packaging tape",
               "Cutting mats (ours are worn through from cutting so many kits)",
             ],
-            modalActionText: "",
+            modalActionText: "Contact: ",
             modalAction: {},
           },
-          button: "",
+          button: {
+            title: "Donate Materials",
+            href:
+              "mailto:distribution.make@gmail.com?subject=New Material Donation",
+          },
         },
         {
-          title: "",
-          textBody: "",
+          title: "Help Elsewhere",
+          textBody:
+            "We are the Tennessee chapter of MaskNow.org. Not from TN? Find your state’s chapter.",
           modal: null,
-          button: "",
+          button: {
+            title: "National Site",
+            function: function() {
+              window.open("https://masksnow.org", "_blank");
+            },
+          },
         },
       ],
     };
