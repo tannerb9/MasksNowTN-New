@@ -154,7 +154,10 @@ export default {
               "Cutting mats (ours are worn through from cutting so many kits)",
             ],
             modalActionText: "Contact: ",
-            modalAction: {},
+            modalAction: {
+              href: "mailto:distribution.make@gmail.com",
+              text: "distribution.make@gmail.com",
+            },
           },
           button: {
             title: "Donate Materials",
