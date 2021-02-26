@@ -1,4 +1,16 @@
 <template>
+  <!-- <v-container>
+    <v-row>
+      <v-col v-for="section in sections">
+        <v-card>
+          <v-card-title> {{ section.title}}</v-card-title>
+          <v-card-text>{{ section.body }}</v-card-text>
+          <v-card-actions><v-btn></v-btn></v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container> -->
+
   <v-row justify="space-around">
     <v-col cols="auto">
       <v-card>
@@ -74,7 +86,7 @@
     </v-col>
     <v-col cols="auto">
       <v-card>
-        <v-card-title> National </v-card-title>
+        <v-card-title> Help Elsewhere </v-card-title>
         <v-card-text>
           We are the Tennessee chapter of MaskNow.org. Not from TN? Find
           your state’s chapter.</v-card-text
@@ -94,31 +106,47 @@ export default {
   name: "Help",
   data() {
     return {
-      materials: [
-        { text: "50% or higher cotton fabric (for the actual mask)" },
+      sections: [
         {
-          text:
-            "Thin elastic (¼-¾” ideally) to hold the mask onto the head",
+          title: "",
+          body: "",
+          modal: null,
+          action: "",
         },
         {
-          text:
-            "T-shirt or similarly stretchy material (this can be cut into ties and used in place of elastic in a pinch)",
+          title: "",
+          body: "",
+          modal: null,
+          action: "",
         },
         {
-          text:
-            "Nosepieces or thin pliable wire that won't poke through masks (even paper clips, and )",
+          title: "",
+          body: "",
+          modal: {
+            clickToOpenText: "",
+            modalHeadline: "",
+            modalBody: [
+              "50% or higher cotton fabric (for the actual mask)",
+              "Thin elastic (¼-¾” ideally) to hold the mask onto the head",
+              "T-shirt or similarly stretchy material (this can be cut into ties and used in place of elastic in a pinch)",
+              "Nosepieces or thin pliable wire that won't poke through masks (even paper clips, and )",
+              "Interfacing",
+              "Bias tape",
+              "90mm and 45mm Blades for rotary cutters",
+              "Bags with a sealing feature (like Ziploc) in which finished masks are sent out in",
+              "Packaging tape",
+              "Cutting mats (ours are worn through from cutting so many kits)",
+            ],
+            modalActionText: "",
+            modalAction: {},
+          },
+          action: "",
         },
-        { text: "Interfacing" },
-        { text: "Bias tape" },
-        { text: "90mm and 45mm Blades for rotary cutters" },
         {
-          text:
-            "Bags with a sealing feature (like Ziploc) in which finished masks are sent out in",
-        },
-        { text: "Packaging tape" },
-        {
-          text:
-            "Cutting mats (ours are worn through from cutting so many kits)",
+          title: "",
+          body: "",
+          modal: null,
+          action: "",
         },
       ],
     };
