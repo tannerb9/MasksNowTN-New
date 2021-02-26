@@ -120,10 +120,19 @@ export default {
           },
         },
         {
-          title: "",
-          textBody: "",
+          title: "Donate Funds",
+          textBody:
+            "All monetary donations stay in TN and go towards purchasing mask-making materials and kits (fabric, elastic, rotary blade replacements, cutting mats, ink, paper, etc.) and mailing masks and kits to those who need them!",
           modal: null,
-          button: "",
+          button: {
+            text: "Donate Funds",
+            function: function() {
+              window.open(
+                "https://charity.gofundme.com/o/en/campaign/masksnow-tennessee",
+                "_blank"
+              );
+            },
+          },
         },
         {
           title: "",
