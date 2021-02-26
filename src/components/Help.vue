@@ -3,20 +3,28 @@
     <h1>Ways To Help</h1>
     <v-row>
       <v-col v-for="section in sections" v-bind:key="section.title">
-        <v-card>
-          <v-card-title> {{ section.title }} </v-card-title>
+        <v-card class="d-flex flex-column">
+          <v-card-title class="justify-center">
+            {{ section.title }}
+          </v-card-title>
           <v-card-text> {{ section.textBody }} </v-card-text>
-          <v-dialog v-if="section.modal">
+          <v-dialog v-if="section.modal" width="auto">
             <template v-slot:activator="{ on, attrs }">
-              <v-btn color="primary" dark v-bind="attrs" v-on="on">
+              <v-btn
+                color="primary"
+                dark
+                v-bind="attrs"
+                v-on="on"
+                class="justify-center"
+              >
                 {{ section.modal.clickToOpenText }}
               </v-btn>
             </template>
             <v-card>
-              <v-card-title class="headline">
+              <v-card-title class="headline justify-center">
                 {{ section.modal.modalHeadline }}
               </v-card-title>
-              <ul>
+              <ul class="justify-start">
                 <li v-for="text in section.modal.modalBody" :key="text">
                   {{ text }}
                 </li>
@@ -31,11 +39,13 @@
               >
             </v-card>
           </v-dialog>
-          <v-card-actions>
+          <v-card-actions class="justify-center">
             <v-btn v-if="section.button.href"
-              ><a :href="`mailto:${section.button.href}`">{{
-                section.button.text
-              }}</a>
+              ><a
+                :href="`mailto:${section.button.href}`"
+                class="text-decoration-none black--text"
+                >{{ section.button.text }}</a
+              >
             </v-btn>
             <v-btn v-else v-on:click="section.button.function"
               >{{ section.button.text }}
@@ -85,7 +95,7 @@ export default {
           textBody:
             "All donations stay in TN and are used to make masks for Tennessean's who need them!",
           modal: {
-            clickToOpenText: "Click here to see materials needed",
+            clickToOpenText: "View Needed Materials",
             modalHeadline: "MATERIALS NEEDED",
             modalBody: [
               "50% or higher cotton fabric (for the actual mask)",
