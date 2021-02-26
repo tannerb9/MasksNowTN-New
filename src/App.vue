@@ -7,12 +7,16 @@
     <v-main>
       <router-view></router-view>
     </v-main>
+
+    <Contact />
   </v-app>
 </template>
 
 <script>
+import Contact from "@/components/Contact";
 export default {
   name: "App",
+  components: { Contact },
 };
 </script>
 
