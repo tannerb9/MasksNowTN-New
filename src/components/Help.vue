@@ -108,20 +108,26 @@ export default {
     return {
       sections: [
         {
-          title: "",
-          body: "",
+          title: "Volunteer",
+          textBody:
+            "There are many ways to help, including sewing, delivering and making kits",
           modal: null,
-          action: "",
+          button: {
+            text: "Sign Up",
+            function: function() {
+              window.open("https://masksnow.org/volunteer/", "_blank");
+            },
+          },
         },
         {
           title: "",
-          body: "",
+          textBody: "",
           modal: null,
-          action: "",
+          button: "",
         },
         {
           title: "",
-          body: "",
+          textBody: "",
           modal: {
             clickToOpenText: "",
             modalHeadline: "",
@@ -140,13 +146,13 @@ export default {
             modalActionText: "",
             modalAction: {},
           },
-          action: "",
+          button: "",
         },
         {
           title: "",
-          body: "",
+          textBody: "",
           modal: null,
-          action: "",
+          button: "",
         },
       ],
     };
