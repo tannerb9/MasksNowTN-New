@@ -7,15 +7,17 @@
           <v-card-title class="justify-center">
             {{ section.title }}
           </v-card-title>
-          <v-card-text> {{ section.textBody }} </v-card-text>
+          <v-card-text class="pb-1">
+            {{ section.textBody }}
+          </v-card-text>
           <v-dialog v-if="section.modal" width="auto">
             <template v-slot:activator="{ on, attrs }">
               <v-btn
-                color="primary"
-                dark
+                color="white"
+                :elevation="0"
                 v-bind="attrs"
                 v-on="on"
-                class="justify-center"
+                class="justify-center blue--text text-capitalize"
               >
                 {{ section.modal.clickToOpenText }}
               </v-btn>
@@ -39,7 +41,7 @@
               >
             </v-card>
           </v-dialog>
-          <v-card-actions class="justify-center">
+          <v-card-actions class="justify-center pt-1">
             <v-btn v-if="section.button.href"
               ><a
                 :href="`mailto:${section.button.href}`"
@@ -137,3 +139,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#modalBtn {
+  background: white;
+}
+</style>
