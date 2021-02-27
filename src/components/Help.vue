@@ -1,9 +1,12 @@
 <template>
   <v-container>
-    <h1>Ways To Help</h1>
+    <h1>How You Can Help</h1>
     <v-row>
       <v-col v-for="section in sections" v-bind:key="section.title">
-        <v-card class="d-flex flex-column">
+        <v-card
+          class="d-flex flex-column justify-space-around"
+          height="18rem"
+        >
           <v-card-title class="justify-center">
             {{ section.title }}
           </v-card-title>
@@ -11,7 +14,7 @@
             {{ section.textBody }}
           </v-card-text>
           <v-dialog v-if="section.modal" width="auto">
-            <template v-slot:activator="{ on, attrs }">
+            <template class="p-2" v-slot:activator="{ on, attrs }">
               <v-btn
                 color="white"
                 :elevation="0"
@@ -23,20 +26,34 @@
               </v-btn>
             </template>
             <v-card>
-              <v-card-title class="headline justify-center">
+              <v-card-title
+                class="headline justify-center text-no-wrap"
+              >
                 {{ section.modal.modalHeadline }}
               </v-card-title>
-              <ul class="justify-start">
-                <li v-for="text in section.modal.modalBody" :key="text">
+              <v-list>
+                <v-list-item
+                  v-for="(text, index) in section.modal.modalBody"
+                  v-bind:class="[
+                    index % 2 ? 'white' : 'grey lighten-2',
+                  ]"
+                  :key="text"
+                  class="justify-center"
+                >
                   {{ text }}
-                </li>
-              </ul>
-              <v-card-text>
+                </v-list-item>
+                <v-divider></v-divider>
+              </v-list>
+              <v-card-text
+                class="text-uppercase black--text font-weight-medium"
+              >
                 {{ section.modal.modalAction.text }}
                 <span
-                  ><a :href="`mailto:${section.button.href}`">{{
-                    section.modal.modalAction.hyperlinkText
-                  }}</a></span
+                  ><a
+                    :href="`mailto:${section.button.href}`"
+                    class="text-lowercase"
+                    >{{ section.modal.modalAction.hyperlinkText }}</a
+                  ></span
                 ></v-card-text
               >
             </v-card>
