@@ -4,7 +4,7 @@
     <v-row>
       <v-col v-for="section in sections" v-bind:key="section.title">
         <v-card
-          class="d-flex flex-column justify-space-around"
+          class="d-flex flex-column justify-space-between"
           height="18rem"
         >
           <v-card-title class="justify-center">
@@ -13,10 +13,11 @@
           <v-card-text class="pb-1">
             {{ section.textBody }}
           </v-card-text>
-          <v-dialog v-if="section.modal" width="auto">
+          <v-dialog v-if="section.modal" max-width="50rem">
             <template class="p-2" v-slot:activator="{ on, attrs }">
               <v-btn
                 color="white"
+                plain
                 :elevation="0"
                 v-bind="attrs"
                 v-on="on"
@@ -51,7 +52,7 @@
                 <span
                   ><a
                     :href="`mailto:${section.button.href}`"
-                    class="text-lowercase"
+                    class="text-lowercase text-body-1 text-no-wrap"
                     >{{ section.modal.modalAction.hyperlinkText }}</a
                   ></span
                 ></v-card-text
