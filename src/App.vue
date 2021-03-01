@@ -20,8 +20,6 @@ export default {
 };
 </script>
 
-import Nav from "@/components/Nav";
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
