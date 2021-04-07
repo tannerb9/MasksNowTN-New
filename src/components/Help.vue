@@ -1,9 +1,165 @@
 <template>
-  <h1>Help Bar</h1>
+  <v-container>
+    <h1>How You Can Help</h1>
+    <v-row>
+      <v-col v-for="section in sections" v-bind:key="section.title">
+        <v-card
+          class="d-flex flex-column justify-space-between"
+          height="18rem"
+        >
+          <v-card-title class="justify-center">
+            {{ section.title }}
+          </v-card-title>
+          <v-card-text class="pb-1">
+            {{ section.textBody }}
+          </v-card-text>
+          <v-dialog v-if="section.modal" max-width="50rem">
+            <template class="p-2" v-slot:activator="{ on, attrs }">
+              <v-btn
+                color="white"
+                plain
+                :elevation="0"
+                v-bind="attrs"
+                v-on="on"
+                class="justify-center blue--text text-capitalize"
+              >
+                {{ section.modal.clickToOpenText }}
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title
+                class="headline justify-center text-no-wrap"
+              >
+                {{ section.modal.modalHeadline }}
+              </v-card-title>
+              <v-list>
+                <v-list-item
+                  v-for="(text, index) in section.modal.modalBody"
+                  v-bind:class="[
+                    index % 2 ? 'white' : 'grey lighten-2',
+                  ]"
+                  :key="text"
+                  class="justify-center"
+                >
+                  {{ text }}
+                </v-list-item>
+                <v-divider></v-divider>
+              </v-list>
+              <v-card-text
+                class="text-uppercase black--text font-weight-medium"
+              >
+                {{ section.modal.modalAction.text }}
+                <span
+                  ><a
+                    :href="`mailto:${section.button.href}`"
+                    class="text-lowercase text-body-1 text-no-wrap"
+                    >{{ section.modal.modalAction.hyperlinkText }}</a
+                  ></span
+                ></v-card-text
+              >
+            </v-card>
+          </v-dialog>
+          <v-card-actions class="justify-center pt-1">
+            <v-btn v-if="section.button.href"
+              ><a
+                :href="`mailto:${section.button.href}`"
+                class="text-decoration-none black--text"
+                >{{ section.button.text }}</a
+              >
+            </v-btn>
+            <v-btn v-else v-on:click="section.button.function"
+              >{{ section.button.text }}
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: "Help",
+  data() {
+    return {
+      sections: [
+        {
+          title: "Volunteer",
+          textBody:
+            "There are many ways to help, including sewing, delivering and making kits",
+          modal: null,
+          button: {
+            text: "Sign Up",
+            function: function() {
+              window.open("https://masksnow.org/volunteer/", "_blank");
+            },
+          },
+        },
+        {
+          title: "Donate Funds",
+          textBody:
+            "All monetary donations stay in TN and go towards purchasing mask-making materials and kits (fabric, elastic, rotary blade replacements, cutting mats, ink, paper, etc.) and mailing masks and kits to those who need them!",
+          modal: null,
+          button: {
+            text: "Donate Funds",
+            function: function() {
+              window.open(
+                "https://charity.gofundme.com/o/en/campaign/masksnow-tennessee",
+                "_blank"
+              );
+            },
+          },
+        },
+        {
+          title: "Donate Materials",
+          textBody:
+            "All donations stay in TN and are used to make masks for Tennessean's who need them!",
+          modal: {
+            clickToOpenText: "View Needed Materials",
+            modalHeadline: "MATERIALS NEEDED",
+            modalBody: [
+              "50% or higher cotton fabric (for the actual mask)",
+              "Thin elastic (¼-¾” ideally) to hold the mask onto the head",
+              "T-shirt or similarly stretchy material (this can be cut into ties and used in place of elastic in a pinch)",
+              "Nosepieces or thin pliable wire that won't poke through masks (even paper clips, and )",
+              "Interfacing",
+              "Bias tape",
+              "90mm and 45mm Blades for rotary cutters",
+              "Bags with a sealing feature (like Ziploc) in which finished masks are sent out in",
+              "Packaging tape",
+              "Cutting mats (ours are worn through from cutting so many kits)",
+            ],
+            modalAction: {
+              text: "Contact: ",
+              hyperlinkText: "distribution.make@gmail.com",
+            },
+          },
+          button: {
+            text: "Donate Materials",
+            href:
+              "distribution.make@gmail.com?subject=New Material Donation",
+          },
+        },
+        {
+          title: "Help Elsewhere",
+          textBody:
+            "We are the Tennessee chapter of MaskNow.org. Not from TN? Find your state’s chapter.",
+          modal: null,
+          button: {
+            text: "National Site",
+            function: function() {
+              window.open("https://masksnow.org", "_blank");
+            },
+          },
+        },
+      ],
+    };
+  },
 };
 </script>
+
+<style scoped>
+#modalBtn {
+  background: white;
+}
+</style>
