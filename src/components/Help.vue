@@ -143,7 +143,7 @@ export default {
         {
           title: "Help Elsewhere",
           textBody:
-            "We are the Tennessee chapter of MaskNow.org. Not from TN? Find your state’s chapter.",
+            "We are the Tennessee chapter of MasksNow.org. Not from TN? Find your state’s chapter.",
           modal: null,
           button: {
             text: "National Site",
