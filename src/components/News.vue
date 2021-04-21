@@ -84,4 +84,8 @@ export default {
 .title {
   word-break: normal;
 }
+
+h1 {
+  padding-top: 50px;
+}
 </style>

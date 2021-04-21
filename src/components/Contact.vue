@@ -4,7 +4,7 @@
       <v-card-text
         class="pt-1 pb-0 text-h6 black white--text text-center"
       >
-        Masks Now TN
+        MasksNOW TN
       </v-card-text>
       <v-card-text class="d-flex py-0 justify-center black">
         <v-btn
