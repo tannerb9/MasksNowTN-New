@@ -1,27 +1,26 @@
 <template>
-  <div>
-    <v-container class="">
-      <v-row>
-        <v-col>
-          <h1 class="main-els">Masks Now TN</h1>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <p class="main-els">{{ info1 }}</p>
-          <p class="main-els">{{ info2 }}</p>
-        </v-col>
-        <v-col>
-          <v-img
-            :src="logo"
-            alt="'We Can Do It'
+  <v-container>
+    <v-row class="row">
+      <v-col>
+        <h1 class="main-els">MasksNOW TN</h1>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="info-img pr-5">
+        <v-img
+          :src="logo"
+          alt="'We Can Do It'
           inspirational image."
-          >
-          </v-img>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+          max-width="450px"
+        >
+        </v-img>
+      </v-col>
+      <v-col class="info-text pl-5">
+        <p class="main-els text-left">{{ info1 }}</p>
+        <p class="main-els text-left">{{ info2 }}</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -38,3 +37,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.info-text {
+  max-width: 450px;
+}
+
+.info-img {
+  max-width: 450px;
+}
+
+.row {
+  justify-content: center;
+}
+</style>
