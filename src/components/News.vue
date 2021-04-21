@@ -1,3 +1,4 @@
+<!--
 <template>
   <v-carousel v-model="model">
     <v-carousel-item v-for="(piece, i) in newsPieces" :key="colors[i]">
@@ -8,6 +9,7 @@
             v-if="newsPieces[i].image"
             :src="newsPieces[i].image"
             max-width="600"
+            height="70%"
           >
           </v-img>
           <div class="display-3" v-if="newsPieces[i].textBody">
@@ -35,6 +37,27 @@
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
+</template>
+-->
+
+<template>
+  <v-sheet class="mx-auto">
+    <v-slide-group v-model="model" class="pa-4" show-arrows>
+      <v-slide-item v-for="news in newsPieces" :key="news.title">
+        <v-card class="ma-4" width="23vw" height="60vh">
+          <v-card-title class="justify-center">{{
+            news.title
+          }}</v-card-title>
+          <v-img
+            v-if="news.image"
+            :src="news.image"
+            width="30%"
+          ></v-img>
+          <v-card-text>{{ news.textBody }}</v-card-text>
+        </v-card>
+      </v-slide-item>
+    </v-slide-group>
+  </v-sheet>
 </template>
 
 <script>
