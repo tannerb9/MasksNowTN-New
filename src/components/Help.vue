@@ -74,6 +74,17 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-container class="airtable">
+      <iframe
+        class="airtable-embed"
+        src="https://airtable.com/embed/shrtdAwqaNjZwgVbm?backgroundColor=whi"
+        frameborder="0"
+        onmousewheel=""
+        width="100%"
+        height="533"
+        style="background: transparent; border: 1px solid #ccc;"
+      ></iframe>
+    </v-container>
   </v-container>
 </template>
 
@@ -161,5 +172,14 @@ export default {
 <style scoped>
 #modalBtn {
   background: white;
+}
+
+.airtable {
+  margin-top: 2rem;
+  max-width: 850px;
+}
+
+h1 {
+  margin-bottom: 1rem;
 }
 </style>
