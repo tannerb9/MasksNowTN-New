@@ -1,63 +1,49 @@
-<!--
 <template>
-  <v-carousel v-model="model">
-    <v-carousel-item v-for="(piece, i) in newsPieces" :key="colors[i]">
-      <v-sheet :color="colors[i]" height="100%" tile>
-        <v-row class="fill-height" align="center" justify="center">
-          <div class="display-3">{{ newsPieces[i].title }}</div>
-          <v-img
-            v-if="newsPieces[i].image"
-            :src="newsPieces[i].image"
-            max-width="600"
-            height="70%"
-          >
-          </v-img>
-          <div class="display-3" v-if="newsPieces[i].textBody">
-            {{ newsPieces[i].textBody }}
-          </div>
-          <v-dialog v-model="dialog">
-            <template
-              v-slot:activator="{ on, attrs }"
-              v-if="newsPieces[i].action"
-            >
-              <v-btn color="primary" dark v-bind="attrs" v-on="on">
-                Learn More
-              </v-btn>
-            </template>
-            <v-card>
-              <v-card-title class="headline">
-                {{ newsPieces[i].title }}
-              </v-card-title>
-              <v-card-text>{{
-                newsPieces[i].modalTextBody
-              }}</v-card-text>
-            </v-card>
-          </v-dialog>
-        </v-row>
-      </v-sheet>
-    </v-carousel-item>
-  </v-carousel>
-</template>
--->
-
-<template>
-  <v-sheet class="mx-auto">
-    <v-slide-group v-model="model" class="pa-4" show-arrows>
-      <v-slide-item v-for="news in newsPieces" :key="news.title">
-        <v-card class="ma-4" width="23vw" height="60vh">
-          <v-card-title class="justify-center">{{
-            news.title
-          }}</v-card-title>
-          <v-img
-            v-if="news.image"
-            :src="news.image"
-            width="30%"
-          ></v-img>
-          <v-card-text>{{ news.textBody }}</v-card-text>
-        </v-card>
-      </v-slide-item>
-    </v-slide-group>
-  </v-sheet>
+  <v-container>
+    <h1>News</h1>
+    <v-sheet>
+      <v-slide-group class="pa-4 pt-0" show-arrows>
+        <v-slide-item v-for="news in newsPieces" :key="news.title">
+          <v-card class="ma-4" width="23vw" height="60vh">
+            <v-card-title class="justify-center title">{{
+              news.title
+            }}</v-card-title>
+            <v-img
+              v-if="news.image"
+              :src="news.image"
+              width="95%"
+              class="mx-auto"
+            ></v-img>
+            <v-card-text v-if="news.textBody">{{
+              news.textBody
+            }}</v-card-text>
+            <v-dialog max-width="50vw">
+              <template
+                v-slot:activator="{ on, attrs }"
+                v-if="news.action"
+              >
+                <v-btn
+                  color="primary"
+                  dark
+                  v-bind="attrs"
+                  v-on="on"
+                  class="mt-2"
+                >
+                  Learn More
+                </v-btn>
+              </template>
+              <v-card>
+                <v-card-title class="headline justify-center">
+                  {{ news.title }}
+                </v-card-title>
+                <v-card-text>{{ news.modalTextBody }}</v-card-text>
+              </v-card>
+            </v-dialog>
+          </v-card>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
+  </v-container>
 </template>
 
 <script>
@@ -89,14 +75,13 @@ export default {
           action: null,
         },
       ],
-      colors: [
-        "primary",
-        "secondary",
-        "yellow darken-2",
-        "red",
-        "orange",
-      ],
     };
   },
 };
 </script>
+
+<style scoped>
+.title {
+  word-break: normal;
+}
+</style>
