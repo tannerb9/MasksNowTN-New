@@ -1,21 +1,8 @@
 <template>
-  <v-container>
-    <v-row class="row">
-      <v-col>
-        <h1 class="main-els">MasksNOW TN</h1>
-      </v-col>
-    </v-row>
+  <v-container class="container">
     <v-row>
-      <!-- <v-col class="info-img pr-5">
-        <v-img
-          :src="logo"
-          alt="'We Can Do It'
-          inspirational image."
-        >
-        </v-img>
-      </v-col> -->
       <v-col class="info-text pl-5">
-        <p class="main-els text-left">
+        <p class="main-els text-left pt-10">
           <v-img
             :src="logo"
             alt="'We Can Do It'
@@ -25,7 +12,7 @@
           </v-img
           >{{ info1 }}
         </p>
-        <p class="main-els text-left">{{ info2 }}</p>
+        <p class="main-els text-left pb-10">{{ info2 }}</p>
       </v-col>
     </v-row>
   </v-container>
@@ -47,19 +34,31 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  background-color: white;
+  box-shadow: 10px 10px #e6c545;
+}
+
 .info-text {
   max-width: 1000px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   hyphens: auto;
 }
 
 .info-img {
+  width: 40vw;
   max-width: 500px;
-  min-width: 500px;
+  /* min-width: 500px; */
   float: right;
 }
 
 .row {
   justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-img {
+    width: 90vw;
+  }
 }
 </style>

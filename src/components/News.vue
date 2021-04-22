@@ -1,11 +1,11 @@
 <template>
   <v-container>
     <h1>News</h1>
-    <v-sheet>
-      <v-slide-group class="pa-4 pt-0" show-arrows>
+    <v-sheet class="sheet">
+      <v-slide-group class="pa-4 pt-0" dark show-arrows>
         <v-slide-item v-for="news in newsPieces" :key="news.title">
-          <v-card class="ma-4" width="23vw" height="60vh">
-            <v-card-title class="justify-center title">{{
+          <v-card class="ma-4" color="white" width="23vw" height="60vh">
+            <v-card-title class="justify-center black--text title">{{
               news.title
             }}</v-card-title>
             <v-img
@@ -14,7 +14,7 @@
               width="95%"
               class="mx-auto"
             ></v-img>
-            <v-card-text v-if="news.textBody">{{
+            <v-card-text class="black--text" v-if="news.textBody">{{
               news.textBody
             }}</v-card-text>
             <v-dialog max-width="50vw">
@@ -23,7 +23,7 @@
                 v-if="news.action"
               >
                 <v-btn
-                  color="primary"
+                  color="#B03412"
                   dark
                   v-bind="attrs"
                   v-on="on"
@@ -81,11 +81,24 @@ export default {
 </script>
 
 <style scoped>
+.sheet {
+  background-color: #153570;
+}
+
+.v-sheet.v-card {
+  border-radius: 0px;
+  box-shadow: 8px 8px #e6c545;
+}
+
 .title {
   word-break: normal;
 }
 
 h1 {
-  padding-top: 50px;
+  padding-top: 60px;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 3px 3px 2px #000;
 }
 </style>

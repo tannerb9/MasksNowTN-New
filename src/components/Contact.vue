@@ -2,15 +2,15 @@
   <v-footer padless>
     <v-card class="flex" flat tile>
       <v-card-text
-        class="pt-1 pb-0 text-h6 black white--text text-center"
+        class="pt-1 pb-0 text-h6 text-center footer brand-name"
       >
         MasksNOW TN
       </v-card-text>
-      <v-card-text class="d-flex py-0 justify-center black">
+      <v-card-text class="d-flex py-0 justify-center footer">
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-4 black"
+          class="mx-4 icons"
           dark
           icon
           v-on:click="clickHandler(icon)"
@@ -57,3 +57,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.footer {
+  background-color: #e8c94b;
+}
+
+.brand-name {
+  color: #153570 !important;
+}
+
+.icons {
+  background-color: #153570;
+}
+</style>
