@@ -6,17 +6,25 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="info-img pr-5">
+      <!-- <v-col class="info-img pr-5">
         <v-img
           :src="logo"
           alt="'We Can Do It'
           inspirational image."
-          max-width="450px"
         >
         </v-img>
-      </v-col>
+      </v-col> -->
       <v-col class="info-text pl-5">
-        <p class="main-els text-left">{{ info1 }}</p>
+        <p class="main-els text-left">
+          <v-img
+            :src="logo"
+            alt="'We Can Do It'
+          inspirational image."
+            class="info-img ml-5"
+          >
+          </v-img
+          >{{ info1 }}
+        </p>
         <p class="main-els text-left">{{ info2 }}</p>
       </v-col>
     </v-row>
@@ -40,11 +48,15 @@ export default {
 
 <style scoped>
 .info-text {
-  max-width: 450px;
+  max-width: 1000px;
+  font-size: 1.5rem;
+  hyphens: auto;
 }
 
 .info-img {
-  max-width: 450px;
+  max-width: 500px;
+  min-width: 500px;
+  float: right;
 }
 
 .row {
