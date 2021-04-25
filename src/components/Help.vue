@@ -79,7 +79,7 @@
     </v-row>
     <v-container class="airtable">
       <iframe
-        class="airtable-embed"
+        class="airtable-embed mb-8"
         src="https://airtable.com/embed/shrtdAwqaNjZwgVbm?backgroundColor=whi"
         frameborder="0"
         onmousewheel=""
@@ -182,8 +182,13 @@ export default {
   max-width: 1000px;
 }
 
+/* .airtable > div > div {
+  border-radius: 0px;
+} */
+
 iframe {
   box-shadow: 8px 8px #e6c545;
+  border-radius: 0px !important;
 }
 
 .v-sheet.v-card {

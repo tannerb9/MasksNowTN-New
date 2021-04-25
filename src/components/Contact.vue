@@ -10,7 +10,7 @@
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-4 icons"
+          class="mx-4"
           dark
           icon
           v-on:click="clickHandler(icon)"
@@ -60,14 +60,14 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #e8c94b;
+  background-color: #b03412;
 }
 
 .brand-name {
-  color: #153570 !important;
+  color: #fff !important;
 }
 
-.icons {
-  background-color: #153570;
+.v-icon {
+  background-color: #b03412;
 }
 </style>

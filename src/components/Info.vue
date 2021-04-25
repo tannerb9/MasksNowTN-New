@@ -39,6 +39,10 @@ export default {
   box-shadow: 10px 10px #e6c545;
 }
 
+p:last-of-type {
+  padding-bottom: 20px !important;
+}
+
 .info-text {
   max-width: 1000px;
   font-size: 1.2rem;
@@ -48,7 +52,6 @@ export default {
 .info-img {
   width: 40vw;
   max-width: 500px;
-  /* min-width: 500px; */
   float: right;
 }
 
