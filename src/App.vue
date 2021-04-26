@@ -4,7 +4,7 @@
       <v-toolbar-title>Masks Now TN</v-toolbar-title>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="main">
       <router-view></router-view>
     </v-main>
 
@@ -28,7 +28,12 @@ import Nav from "@/components/Nav";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000;
   margin-top: 60px;
+}
+
+.main {
+  padding-top: 30px !important;
+  background-color: #153570;
 }
 </style>

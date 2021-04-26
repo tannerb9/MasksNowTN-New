@@ -4,7 +4,7 @@
     <v-row>
       <v-col v-for="section in sections" v-bind:key="section.title">
         <v-card
-          class="d-flex flex-column justify-space-between"
+          class="help-card d-flex flex-column justify-space-between"
           height="18rem"
         >
           <v-card-title class="justify-center">
@@ -16,12 +16,12 @@
           <v-dialog v-if="section.modal" max-width="50rem">
             <template class="p-2" v-slot:activator="{ on, attrs }">
               <v-btn
-                color="white"
+                color="#153570"
                 plain
                 :elevation="0"
                 v-bind="attrs"
                 v-on="on"
-                class="justify-center blue--text text-capitalize"
+                class="justify-center bluetext text-capitalize"
               >
                 {{ section.modal.clickToOpenText }}
               </v-btn>
@@ -60,20 +60,34 @@
             </v-card>
           </v-dialog>
           <v-card-actions class="justify-center pt-1">
-            <v-btn v-if="section.button.href"
+            <v-btn v-if="section.button.href" class="hyperlink-button"
               ><a
                 :href="`mailto:${section.button.href}`"
-                class="text-decoration-none black--text"
+                class="text-decoration-none white--text"
                 >{{ section.button.text }}</a
               >
             </v-btn>
-            <v-btn v-else v-on:click="section.button.function"
+            <v-btn
+              v-else
+              v-on:click="section.button.function"
+              class="hyperlink-button"
               >{{ section.button.text }}
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
+    <v-container class="airtable">
+      <iframe
+        class="airtable-embed mb-8"
+        src="https://airtable.com/embed/shrtdAwqaNjZwgVbm?backgroundColor=whi"
+        frameborder="0"
+        onmousewheel=""
+        width="100%"
+        height="533"
+        style="background: transparent; border: 1px solid #ccc;"
+      ></iframe>
+    </v-container>
   </v-container>
 </template>
 
@@ -143,7 +157,7 @@ export default {
         {
           title: "Help Elsewhere",
           textBody:
-            "We are the Tennessee chapter of MaskNow.org. Not from TN? Find your state’s chapter.",
+            "We are the Tennessee chapter of MasksNow.org. Not from TN? Find your state’s chapter.",
           modal: null,
           button: {
             text: "National Site",
@@ -161,5 +175,42 @@ export default {
 <style scoped>
 #modalBtn {
   background: white;
+}
+
+.airtable {
+  margin-top: 2rem;
+  max-width: 1000px;
+}
+
+/* .airtable > div > div {
+  border-radius: 0px;
+} */
+
+iframe {
+  box-shadow: 8px 8px #e6c545;
+  border-radius: 0px !important;
+}
+
+.v-sheet.v-card {
+  border-radius: 0px;
+  box-shadow: 6px 6px #e6c545;
+}
+
+h1 {
+  padding-top: 20px;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 3px 3px 2px #000;
+}
+
+.hyperlink-button {
+  background-color: #b03412 !important;
+  color: white !important;
+}
+
+.theme--light.v-card > .v-card__text,
+.theme--light.v-card .v-card__subtitle {
+  color: rgba(0, 0, 0, 1);
 }
 </style>
