@@ -1,27 +1,21 @@
 <template>
-  <div>
-    <v-container class="">
-      <v-row>
-        <v-col>
-          <h1 class="main-els">Masks Now TN</h1>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <p class="main-els">{{ info1 }}</p>
-          <p class="main-els">{{ info2 }}</p>
-        </v-col>
-        <v-col>
+  <v-container class="container">
+    <v-row>
+      <v-col class="info-text pl-5">
+        <p class="main-els text-left pt-10">
           <v-img
             :src="logo"
             alt="'We Can Do It'
           inspirational image."
+            class="info-img ml-5"
           >
-          </v-img>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+          </v-img
+          >{{ info1 }}
+        </p>
+        <p class="main-els text-left pb-10">{{ info2 }}</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -38,3 +32,36 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container {
+  background-color: white;
+  box-shadow: 10px 10px #e6c545;
+}
+
+p:last-of-type {
+  padding-bottom: 20px !important;
+}
+
+.info-text {
+  max-width: 1000px;
+  font-size: 1.2rem;
+  hyphens: auto;
+}
+
+.info-img {
+  width: 40vw;
+  max-width: 500px;
+  float: right;
+}
+
+.row {
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-img {
+    width: 90vw;
+  }
+}
+</style>
