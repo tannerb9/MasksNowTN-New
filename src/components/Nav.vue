@@ -93,4 +93,7 @@ a {
     transform: scale(1.07);
 }
 
+.v-tabs-slider {
+    color: #153570
+}
 </style>
